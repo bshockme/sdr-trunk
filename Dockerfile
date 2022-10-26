@@ -1,7 +1,7 @@
 FROM gibby/base:ubuntu18.04
 SHELL ["/bin/bash", "-c"]
 
-ENV TZ=America/New_York
+ENV TZ=America/Chicago
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Install packages for trunk-recorder and liquidsoap
@@ -49,7 +49,7 @@ RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
     locale-gen
 
 # Get recorder
-COPY --from=gibby/trunk-recorder:latest /home/radio/trunk-player ./
+COPY --from=robotastic/trunk-recorder:latest /home/radio/trunk-player ./
 
 # Setup container
 COPY src_files/* ./src_files/
