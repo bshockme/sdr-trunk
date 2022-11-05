@@ -1,4 +1,4 @@
-FROM gibby/base:ubuntu18.04
+FROM ubuntu:22.04 AS base
 SHELL ["/bin/bash", "-c"]
 
 ENV TZ=America/Chicago
