@@ -8,8 +8,8 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update && apt-get install --no-install-recommends -y \
     ffmpeg \
     lame \
-    libboost-log1.74.0 \
-    libboost-regex1.74.0 \
+    libboost-log1.65.1 \
+    libboost-regex1.65.1 \
     libgnuradio-analog* \
     libgnuradio-blocks* \
     libgnuradio-digital* \
@@ -19,6 +19,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     libgnuradio-uhd* \
     libuhd0* \
     liquidsoap \
+    liquidsoap-plugin-all \
     socat \
     usbutils \
     gettext
